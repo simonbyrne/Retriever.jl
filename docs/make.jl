@@ -1,5 +1,7 @@
-push!(LOAD_PATH,"../src/Retriever.jl")
-include("../src/Retriever.jl")
+# push!(LOAD_PATH,"../src/Retriever.jl")
+# include("../src/Retriever.jl")
+# Pkg.clone(pwd(), \"Documenter\") Pkg.clone("../", \"Retriever\")
+# Pkg.clone("../", "Retriever")
 using Retriever
 using Documenter
 
@@ -15,14 +17,3 @@ makedocs(
         "Source" => "index.md"
     ]
 )
-
-# deploydocs(
-#     repo   = "github.com/henrykironde/Retriever.jl",
-#     target = "build",
-#     osname = "linux",
-#     #osname = "osx",
-#     julia  = "0.6",
-#     deps   = nothing,
-#     deps = Deps.pip("Retriever"),
-#     make   = nothing
-# )
