@@ -10,14 +10,12 @@ env:
   matrix:
     - PYTHON=python3 # python 3.5
 
-before_script:
+before_install:
  - sudo pip install --upgrade pip
  - sudo git clone https://github.com/weecology/retriever.git
  - sudo pip install git+https://github.com/weecology/retriever.git
  - sudo pip install -e retriever
  - sudo rm -rf retriever
-
-before_install:
   - test "x$TRAVIS_OS_NAME" = xosx -o "x$PYTHON" = xConda-python || (sudo apt-get -qq update && sudo apt-get install -y $PYTHON)
   - julia -e 'Pkg.add("PyCall"); Pkg.build("PyCall");'
 
