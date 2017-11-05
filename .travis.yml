@@ -20,8 +20,9 @@ before_script:
   - sudo apt-get update
   - python --version
   - which python
+  - which $PYTHON
   - sudo pip install virtualenv
-  - virtualenv -p $PYTHON .venv
+  - virtualenv -p='which $PYTHON' .venv
   - source .venv/bin/activate
   - which python
   - which pip
