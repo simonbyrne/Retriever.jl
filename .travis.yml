@@ -22,7 +22,7 @@ before_script:
   - sudo git clone https://github.com/weecology/retriever.git
   - sudo pip install git+https://github.com/weecology/retriever.git
   - sudo pip install -e retriever
-  - echo PYTHON
+  - echo $PYTHON
 
 script:
  - julia -e 'Pkg.clone(pwd());'
