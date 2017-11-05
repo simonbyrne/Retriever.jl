@@ -8,7 +8,11 @@ julia:
 
 env:
   matrix:
-    python: '3.4' #Not used
+    include:
+    - os: linux
+      dist: trusty
+      sudo: false
+      python: '3.4'
 
 before_install:
   - sudo git clone https://github.com/weecology/retriever.git
