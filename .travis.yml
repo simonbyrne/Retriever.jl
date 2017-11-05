@@ -17,10 +17,13 @@ env:
     - PYTHON=python3 # python 3.5
 
 before_script:
+  - python --version
   - which python
   - sudo git clone https://github.com/weecology/retriever.git
   - sudo pip install git+https://github.com/weecology/retriever.git
   - sudo pip install -e retriever
+  - PYTHON
+  - echo PYTHON
 
 script:
  - julia -e 'Pkg.clone(pwd());'
