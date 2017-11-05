@@ -8,15 +8,16 @@ julia:
 
 matrix:
   include:
-    - language: python
       python: "3.4"
       sudo: required
 
-      before_install:
-          - sudo git clone https://github.com/weecology/retriever.git
-          - sudo pip install git+https://github.com/weecology/retriever.git
-          - sudo pip install -e retriever
-      script: julia -e 'Pkg.clone(pwd())'
+before_install:
+    - python --version
+    - source ~/virtualenv/python3.5/bin/activate
+    - sudo git clone https://github.com/weecology/retriever.git
+    - sudo pip install git+https://github.com/weecology/retriever.git
+    - sudo pip install -e retriever
+script: julia -e 'Pkg.clone(pwd())'
 #      script: julia -e 'Pkg.clone(pwd()); Pkg.build("Retriever"); Pkg.test("Retriever"; coverage=true)'
 
 #
