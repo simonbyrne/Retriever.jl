@@ -14,7 +14,7 @@ env:
     - PYCALL_DEBUG_BUILD="yes"
   matrix:
 #    - PYTHON=python  # python 2.7
-    - PYTHON=python3 # python 3.5 PACKAGES="python3-pip"
+    - PYTHON="python3" PACKAGES="python3-pip"
 
 before_script:
   - sudo apt-get update -q
