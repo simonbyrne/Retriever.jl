@@ -13,7 +13,7 @@ env:
   global:
     - PYCALL_DEBUG_BUILD="yes"
   matrix:
-    - PYTHON=python  # python 2.7
+#    - PYTHON=python  # python 2.7
     - PYTHON=python3 # python 3.5
 
 before_script:
@@ -29,7 +29,7 @@ before_script:
   - curl https://bootstrap.pypa.io/get-pip.py | sudo python
 
   - sudo git clone https://github.com/weecology/retriever.git retriever
-  - sudo python -m pip install -e retriever
+  - sudo python -m pip3 install -e retriever
   - which retriever
   - echo $PYTHON
   - which python
