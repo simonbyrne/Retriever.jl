@@ -24,8 +24,8 @@ before_script:
   - source .venv/bin/activate
   - python --version
   - sudo git clone https://github.com/weecology/retriever.git
-  - sudo pip install git+https://github.com/weecology/retriever.git
-  - sudo pip install -e retriever
+  - sudo $PYTHON -m pip install git+https://github.com/weecology/retriever.git
+  - sudo $PYTHON -m pip install -e retriever
   - echo $PYTHON
 
 script:
