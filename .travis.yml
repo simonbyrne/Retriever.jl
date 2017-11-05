@@ -1,6 +1,11 @@
 dist: trusty
+sudo: required
+language: julia
 os:
   - linux
+julia:
+  - 0.5
+
 matrix:
   include:
     - language: python
@@ -8,11 +13,11 @@ matrix:
       sudo: required
 
       before_install:
-          - sudo apt-get install julia
           - sudo git clone https://github.com/weecology/retriever.git
           - sudo pip install git+https://github.com/weecology/retriever.git
           - sudo pip install -e retriever
-      script: julia -e 'Pkg.clone(pwd()); Pkg.build("Retriever"); Pkg.test("Retriever"; coverage=true)'
+      script: julia -e 'Pkg.clone(pwd())'
+#      script: julia -e 'Pkg.clone(pwd()); Pkg.build("Retriever"); Pkg.test("Retriever"; coverage=true)'
 
 #
 #      before_install:
