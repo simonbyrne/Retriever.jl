@@ -18,7 +18,8 @@ env:
 
 before_script:
   - sudo apt-get update -q
-  - python --version
+  - $PYTHON --version
+  - sudo apt-get install python3
   - which python
   - which $PYTHON
   - sudo pip3 install virtualenv
