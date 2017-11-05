@@ -24,6 +24,7 @@ before_script:
   - source .venv/bin/activate
   - python --version
   - curl https://bootstrap.pypa.io/get-pip.py | $PYTHON
+  - sudo $PYTHON -m pip install -U setuptools
   - sudo git clone https://github.com/weecology/retriever.git
   - sudo $PYTHON -m pip install git+https://github.com/weecology/retriever.git
   - sudo $PYTHON -m pip install -e retriever
