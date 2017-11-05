@@ -6,13 +6,13 @@ matrix:
     - language: python, Julia
       python: "3.4"
       julia: "0.5"
-    sudo: required
-    before_install:
-      - test "x$TRAVIS_OS_NAME" = xosx -o "x$PYTHON" = xConda-python || (sudo apt-get -qq update && sudo apt-get install -y $PYTHON)
-      - sudo git clone https://github.com/weecology/retriever.git
-      - sudo pip install git+https://github.com/weecology/retriever.git
-      - sudo pip install -e retriever
-    script: julia -e 'Pkg.clone(pwd()); Pkg.build("Retriever"); Pkg.test("Retriever"; coverage=true)'
+      sudo: required
+#      before_install:
+#        - test "x$TRAVIS_OS_NAME" = xosx -o "x$PYTHON" = xConda-python || (sudo apt-get -qq update && sudo apt-get install -y $PYTHON)
+#        - sudo git clone https://github.com/weecology/retriever.git
+#        - sudo pip install git+https://github.com/weecology/retriever.git
+#        - sudo pip install -e retriever
+#      script: julia -e 'Pkg.clone(pwd()); Pkg.build("Retriever"); Pkg.test("Retriever"; coverage=true)'
 #    - language: python
 #      sudo: false
 #      python: "3.3"
