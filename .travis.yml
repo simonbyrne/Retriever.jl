@@ -6,15 +6,10 @@ matrix:
     - language: python
       python: "3.4"
       sudo: required
-
       before_install:
-          - if [ `uname` = "Linux" ]; then
-              sudo apt-get install julia
-            elif [ `uname` = "Darwin" ]; then
-              brew update;
-              brew install julia;
-#
-#
+          - if `uname` = "Linux"; sudo apt-get install julia
+          - if `uname` = "Darwin"; brew update; brew install julia;
+ 
 #      before_install:
 #        - test "x$TRAVIS_OS_NAME" = xosx -o "x$PYTHON" = xConda-python || (sudo apt-get -qq update && sudo apt-get install -y $PYTHON)
 #        - sudo git clone https://github.com/weecology/retriever.git
