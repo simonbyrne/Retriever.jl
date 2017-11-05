@@ -32,7 +32,7 @@ before_script:
 
 #  - sudo pip3 install virtualenv
   - virtualenv --python=$PYTHON --system-site-packages _venv
-  - source .venv/bin/activate
+  - source _venv/bin/activate
   - which python
   - which pip3
   - python --version
