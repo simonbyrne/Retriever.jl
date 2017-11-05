@@ -27,15 +27,15 @@ before_script:
   - curl https://bootstrap.pypa.io/get-pip.py | sudo python
 
   - sudo git clone https://github.com/weecology/retriever.git retriever
-  - sudo pip3 install coverage
-  - sudo pip3 install ./retriever/
+
+  - sudo pip install ./retriever/
 
 
 #  - sudo pip3 install virtualenv
   - virtualenv --python=$PYTHON --system-site-packages _venv
   - source _venv/bin/activate
   - which python
-  - which pip3
+  - which pip
   - python --version
 #  - curl https://bootstrap.pypa.io/get-pip.py | sudo python
 #
