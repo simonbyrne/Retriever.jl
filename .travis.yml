@@ -14,7 +14,7 @@ env:
     - PYCALL_DEBUG_BUILD="yes"
   matrix:
     - PYTHON=python  # python 2.7
-    - PYTHON=python3 # python 3.5
+    - PYTHON=python3.5 # python 3.5
 
 before_script:
   - python --version
@@ -23,10 +23,13 @@ before_script:
   - virtualenv -p $PYTHON .venv
   - source .venv/bin/activate
   - python --version
+  - curl https://bootstrap.pypa.io/get-pip.py | $PYTHON
   - sudo git clone https://github.com/weecology/retriever.git
   - sudo $PYTHON -m pip install git+https://github.com/weecology/retriever.git
   - sudo $PYTHON -m pip install -e retriever
+  - which retriever
   - echo $PYTHON
+
 
 script:
  - julia -e 'Pkg.clone(pwd());'
