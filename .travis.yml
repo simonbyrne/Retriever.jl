@@ -17,6 +17,7 @@ env:
     - PYTHON=python3 # python 3.5
 
 before_script:
+  - sudo apt-get update
   - python --version
   - which python
   - sudo pip install virtualenv
@@ -27,8 +28,7 @@ before_script:
   - python --version
   - curl https://bootstrap.pypa.io/get-pip.py | sudo python
 
-  - sudo git clone https://github.com/weecology/retriever.git
-  - sudo pip install git+https://github.com/weecology/retriever.git
+  - sudo git clone https://github.com/weecology/retriever.git retriever
   - sudo pip install -e retriever
   - which retriever
   - echo $PYTHON
