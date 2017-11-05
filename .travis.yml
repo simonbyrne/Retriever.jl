@@ -23,8 +23,10 @@ before_script:
   - virtualenv -p $PYTHON .venv
   - source .venv/bin/activate
   - which python
+  - which pip
   - python --version
   - curl https://bootstrap.pypa.io/get-pip.py | sudo python
+
   - sudo git clone https://github.com/weecology/retriever.git
   - sudo pip install git+https://github.com/weecology/retriever.git
   - sudo pip install -e retriever
