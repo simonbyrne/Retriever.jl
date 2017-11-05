@@ -9,17 +9,17 @@ julia:
 #  - 0.6
 #  - nightly
 
-env:
-  global:
-    - PYCALL_DEBUG_BUILD="yes"
-  matrix:
+matrix:
+  include:
+      language: generic
+      env: PYTHON="python3" PACKAGES="python3-psutil python3-pip"
 #    - PYTHON=python  # python 2.7
-    - PYTHON="python3" PACKAGES="python3-pip"
+#    - PYTHON="python3" PACKAGES="python3-pip"
 
 before_script:
   - sudo apt-get update -q
   - $PYTHON --version
-  - sudo apt-get install python3
+  - sudo apt-get install python3.5
   - which python
   - which $PYTHON
   - sudo pip3 install virtualenv
