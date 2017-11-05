@@ -1,25 +1,20 @@
 dist: trusty
 sudo: required
-language: julia
+language: python
 os:
   - linux
-julia:
-  - 0.5
+
 
 env:
   global:
   - PYCALL_DEBUG_FIND_LIBPYTHON=1
   matrix:
-  - PYENV_VERSION=2.7.13
-  - PYENV_VERSION=3.6.2
-
-matrix:
-  include:
-  - os: linux
+  - PYTHON=python3 # python 3.5
+  - julia: 0.5
     env: PYENV_VERSION=3.4
 
 before_install:
-  - export PATH="$(pyenv root)/bin:$PATH"
+  - test "x$TRAVIS_OS_NAME" = xosx -o "x$PYTHON" = xConda-python || (sudo apt-get -qq update && sudo apt-get install -y $PYTHON)
   - sudo git clone https://github.com/weecology/retriever.git
   - sudo pip install git+https://github.com/weecology/retriever.git
   - sudo pip install -e retriever
