@@ -22,6 +22,7 @@ before_script:
   - sudo pip install virtualenv
   - virtualenv -p $PYTHON .venv
   - source .venv/bin/activate
+  - which python
   - python --version
   - curl https://bootstrap.pypa.io/get-pip.py | sudo python
   - sudo git clone https://github.com/weecology/retriever.git
@@ -29,6 +30,7 @@ before_script:
   - sudo pip install -e retriever
   - which retriever
   - echo $PYTHON
+  - which python
 
 
 script:
