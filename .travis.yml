@@ -5,13 +5,9 @@ os:
   - linux
 julia:
   - 0.5
+python:
+  - "3.4"
 
-matrix:
-  include:
-  - os: linux
-    dist: trusty
-    sudo: false
-    env: PYENV_VERSION=3.4
 
 before_install:
   - sudo git clone https://github.com/weecology/retriever.git
