@@ -13,8 +13,8 @@ env:
   global:
     - PYCALL_DEBUG_BUILD="yes"
   matrix:
-    - PYTHON=python  # python 2.7
-    - PYTHON=python3 # python 3.5
+    - PYTHON=python  python 2.7
+    - PYTHON=python3 python 3.5
 
 before_script:
   - python --version
