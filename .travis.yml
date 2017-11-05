@@ -13,12 +13,16 @@ env:
   global:
     - PYCALL_DEBUG_BUILD="yes"
   matrix:
-    - PYTHON=python  python 2.7
-    - PYTHON=python3 python 3.5
+    - PYTHON=python  # python 2.7
+    - PYTHON=python3 # python 3.5
 
 before_script:
   - python --version
   - which python
+  - sudo pip install virtualenv
+  - virtualenv -p $PYTHON .venv
+  - source .venv/bin/activate
+  - python --version
   - sudo git clone https://github.com/weecology/retriever.git
   - sudo pip install git+https://github.com/weecology/retriever.git
   - sudo pip install -e retriever
