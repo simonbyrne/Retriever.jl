@@ -27,7 +27,8 @@ before_script:
   - curl https://bootstrap.pypa.io/get-pip.py | sudo python
 
   - sudo git clone https://github.com/weecology/retriever.git retriever
-  - sudo pip3 install -e retriever
+  - sudo pip3 install coverage
+  - sudo pip3 install ./retriever/
 
 
 #  - sudo pip3 install virtualenv
