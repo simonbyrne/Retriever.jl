@@ -3,23 +3,61 @@ sudo: required
 language: julia
 os:
   - linux
+#  - osx
 julia:
   - 0.5
+#  - 0.6
+#  - nightly
 
-matrix:
-  include:
-      python: "3.4"
-      sudo: required
+env:
+  global:
+    - PYCALL_DEBUG_BUILD="yes"
+  matrix:
+    - PYTHON=python  # python 2.7
+    - PYTHON=python3 # python 3.5
 
-before_install:
-    - python --version
-    - python3 --version
-    - source ~/virtualenv/python3.5/bin/activate
-    - sudo git clone https://github.com/weecology/retriever.git
-    - sudo pip install git+https://github.com/weecology/retriever.git
-    - sudo pip install -e retriever
-script: julia -e 'Pkg.clone(pwd())'
-#      script: julia -e 'Pkg.clone(pwd()); Pkg.build("Retriever"); Pkg.test("Retriever"; coverage=true)'
+before_script:
+  - which python
+  - sudo git clone https://github.com/weecology/retriever.git
+  - sudo pip install git+https://github.com/weecology/retriever.git
+  - sudo pip install -e retriever
+
+script:
+ - julia -e 'Pkg.clone(pwd());'
+#
+#after_success:
+#  # push coverage results to Coveralls
+#  - julia -e 'cd(Pkg.dir("Retriever")); Pkg.add("Coverage"); using Coverage; Coveralls.submit(Coveralls.process_folder())'
+#  # push coverage results to Codecov
+#  - julia -e 'cd(Pkg.dir("Retriever")); Pkg.add("Coverage"); using Coverage; Codecov.submit(Codecov.process_folder())'
+
+notifications:
+  email: false
+
+
+
+#dist: trusty
+#sudo: required
+#language: julia
+#os:
+#  - linux
+#julia:
+#  - 0.5
+#
+#matrix:
+#  include:
+#      python: "3.4"
+#      sudo: required
+#
+#before_install:
+#    - python --version
+#    - python3 --version
+#    - source ~/virtualenv/python3.5/bin/activate
+#    - sudo git clone https://github.com/weecology/retriever.git
+#    - sudo pip install git+https://github.com/weecology/retriever.git
+#    - sudo pip install -e retriever
+#script: julia -e 'Pkg.clone(pwd())'
+##      script: julia -e 'Pkg.clone(pwd()); Pkg.build("Retriever"); Pkg.test("Retriever"; coverage=true)'
 
 #
 #      before_install:
@@ -59,6 +97,6 @@ script: julia -e 'Pkg.clone(pwd())'
 #  # push coverage results to Codecov
 #  - julia -e 'cd(Pkg.dir("Retriever")); Pkg.add("Coverage"); using Coverage; Codecov.submit(Codecov.process_folder())'
 #
-
-notifications:
-  email: false
+#
+#notifications:
+#  email: false
