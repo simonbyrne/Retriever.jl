@@ -17,12 +17,3 @@ makedocs(
         "Code of Conduct" => "CODE_OF_CONDUCT.md"
     ]
 )
-
-deploydocs(
-    repo   = "github.com/weecology/Retriever.jl",
-    target = "build",
-    osname = "linux",
-    julia  = "0.6",
-    deps   = Deps.pip("retriever"),
-    make   = nothing
-)
