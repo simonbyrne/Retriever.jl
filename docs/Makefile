@@ -1,6 +1,11 @@
 # Makefile for building documentation
 
 default: html
+
+
+
+
+SOURCEDIR     = src
 SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
 PAPER         =
@@ -32,8 +37,8 @@ cleanall: clean
 
 html: deps
 	@echo "Building HTML documentation."
-	$(Python --version)
-	# $(JULIA_EXECUTABLE) $(MAKEFILE)
+	# $(Python --version)
+	$(JULIA_EXECUTABLE) $(MAKEFILE)
 # ifneq ($(OS),WINNT)
 # 	$(JULIA_EXECUTABLE) $(call cygpath_w,$(SRCDIR)/make.jl)
 # else
