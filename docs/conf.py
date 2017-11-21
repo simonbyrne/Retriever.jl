@@ -1,24 +1,18 @@
 # -*- coding: utf-8 -*-
 
-import sys, os, shlex
-
-import juliadoc
-import sphinx_rtd_theme
-
 
 extensions = [
     'sphinx.ext.mathjax',
-    'juliadoc.julia',
-    'juliadoc.jlhelp'
+    # 'juliadoc.julia',
+    # 'juliadoc.jlhelp'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+# templates_path = ['_templates']
 
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 source_suffix = ['.rst', '.md']
-source_suffix = ['.md']
 
 
 # reef:
@@ -28,7 +22,7 @@ source_suffix = ['.md']
 #source_encoding = 'utf-8-sig'
 
 # The master toctree document.
-master_doc = 'index'
+master_doc = 'src/index'
 
 # General information about the project.
 project = u'Data Retriever'
@@ -49,7 +43,7 @@ version = release = '1.0.0'
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = None
+# language = None
 
 # There are two options for replacing |today|: either, you set today to some
 # non-false value, then it is used:
@@ -59,7 +53,7 @@ language = None
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['_build']
+# exclude_patterns = ['_build']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -77,7 +71,7 @@ exclude_patterns = ['_build']
 #show_authors = False
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = 'sphinx'
+# pygments_style = 'sphinx'
 
 # A list of ignored prefixes for module index sorting.
 #modindex_common_prefix = []
@@ -86,14 +80,14 @@ pygments_style = 'sphinx'
 #keep_warnings = False
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
-todo_include_todos = False
+# todo_include_todos = False
 
 
 # -- Options for HTML output ----------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'julia'
+# html_theme = 'julia'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -101,8 +95,8 @@ html_theme = 'julia'
 #html_theme_options = {}
 
 # Add any paths that contain custom themes here, relative to this directory.
-html_theme_path = [juliadoc.get_theme_dir(),
-                   sphinx_rtd_theme.get_html_theme_path()]
+# html_theme_path = [juliadoc.get_theme_dir(),
+#                    sphinx_rtd_theme.get_html_theme_path()]
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
@@ -123,12 +117,12 @@ html_theme_path = [juliadoc.get_theme_dir(),
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+html_static_path = ['src/assets']
 
 # Add any extra paths that contain custom files (such as robots.txt or
 # .htaccess) here, relative to this directory. These files are copied
 # directly to the root of the documentation.
-#html_extra_path = []
+html_extra_path = ['src/assets']
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
@@ -139,7 +133,7 @@ html_static_path = ['_static']
 #html_use_smartypants = True
 
 # Custom sidebar templates, maps document names to template names.
-html_sidebars = juliadoc.default_sidebars()
+# html_sidebars = juliadoc.default_sidebars()
 
 # Additional templates that should be rendered to pages, maps page names to
 # template names.
@@ -186,7 +180,7 @@ html_sidebars = juliadoc.default_sidebars()
 #html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'retrieverdoc'
+# htmlhelp_basename = 'retrieverdoc'
 
 # -- Options for LaTeX output ---------------------------------------------
 

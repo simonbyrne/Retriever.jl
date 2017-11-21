@@ -3,27 +3,47 @@ sudo: required
 language: julia
 os:
     - linux
-    - osx
+    # - osx
 julia:
-    - 0.5
+    # - 0.5
     - 0.6
 env:
   global:
     - PYCALL_DEBUG_BUILD="yes"
   matrix:
-    - PYTHON=python  # python 2.7
+    # - PYTHON=python  # python 2.7
     - PYTHON=python3 # python 3.5
 matrix:
   exclude:
     - os: osx
       env: PYTHON=python3 # not sure how to install Python 3 on Travis OSX
 before_install:
-    - test "x$TRAVIS_OS_NAME" = xosx -o "x$PYTHON" = xConda-python || (sudo apt-get -qq update && sudo apt-get install -y $PYTHON)
-    - test "x$TRAVIS_OS_NAME" = xosx -o "x$PYTHON" = xConda-python || (sudo apt-get install $PYTHON$"-pip")
-
-install:
+    - which $PYTHON
+    # - test "x$TRAVIS_OS_NAME" = xosx -o "x$PYTHON" = xConda-python || (sudo apt-get -qq update && sudo apt-get install -y $PYTHON)
+    # - test "x$TRAVIS_OS_NAME" = xosx -o "x$PYTHON" = xConda-python || (sudo apt-get install $PYTHON$"-pip")
+    # - alias julia= $($(shell ls /Applications/Julia*/Contents/Resources/julia/bin/julia))
+    - sudo apt-get -qq update
+    - sudo apt-get install -y $PYTHON
+    - make help
+    - sudo apt-get install $PYTHON$"-pip"
+    - which $PYTHON
     - sudo $PYTHON -m pip install git+https://github.com/weecology/retriever.git
-after_success:
-    - julia -e 'cd(Pkg.dir("Retriever")); include(joinpath("docs", "make.jl"))')'
+    # - julia --color=yes -e "ENV["PYTHON"] = readstring(`which python`)"
+    # - julia --color=yes -e "Pkg.build(Pycall")"
+    # - export PATH=$($(shell ls /Applications/Julia*/Contents/Resources/julia/bin/):${PATH})
+    # - export PATH=$($(which python)$"/bin/:${PATH}")
+# script:
+#     - julia -e 'versioninfo()'
+#     - which $PYTHON
+#     - ls
+
+#     - julia test/runtests.jl
+#     - julia -e 'ENV';
+install:
+    # - sudo $PYTHON -m pip install git+https://github.com/weecology/retriever.git
+    - which retriever
+
+# after_success:
+#     - julia -e 'p'
 notifications:
     email: false
