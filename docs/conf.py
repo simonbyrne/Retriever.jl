@@ -1,7 +1,31 @@
 # -*- coding: utf-8 -*-
 
-import sys, os, shlex
+function install(arg1)
+    try
+      println("p is $p")
+      println("q is $q")
+      return true
+    catch
+        return false
+    end
+end
 
+@test true
+@test true
+
+
+@testset "Deque" begin
+    using Retriever
+    @test true
+    @test true == true
+    install("j")
+    #Retriever.install_csv("iris")
+    #Retriever.install_sqlite("iris")
+end # @testset Deque
+
+import sys, os, shlex
+sys.path.append('/mypath/scriptlib')
+os.system("Users/henrykironde/.Ju")
 import juliadoc
 import sphinx_rtd_theme
 
