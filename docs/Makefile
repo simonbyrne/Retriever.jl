@@ -10,7 +10,7 @@ SRCDIR           := $(abspath $(dir $(lastword $(MAKEFILE_LIST))))
 JULIAHOME        := $(abspath $(SRCDIR)/..)
 MAKEFILE         := $(abspath $(SRCDIR)/make.jl)
 JULIA_EXECUTABLE := $(shell ls /Applications/Julia*/Contents/Resources/julia/bin/julia)
-git
+
 .PHONY: help clean cleanall html pdf linkcheck doctest check deps deploy
 
 help:
@@ -32,7 +32,8 @@ cleanall: clean
 
 html: deps
 	@echo "Building HTML documentation."
-	$(JULIA_EXECUTABLE) $(MAKEFILE)
+	$(Python --version)
+	# $(JULIA_EXECUTABLE) $(MAKEFILE)
 # ifneq ($(OS),WINNT)
 # 	$(JULIA_EXECUTABLE) $(call cygpath_w,$(SRCDIR)/make.jl)
 # else

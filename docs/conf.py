@@ -1,34 +1,5 @@
 # -*- coding: utf-8 -*-
 
-function install(arg1)
-    try
-      println("p is $p")
-      println("q is $q")
-      return true
-    catch
-        return false
-    end
-end
-
-@test true
-@test true
-
-
-@testset "Deque" begin
-    using Retriever
-    @test true
-    @test true == true
-    install("j")
-    #Retriever.install_csv("iris")
-    #Retriever.install_sqlite("iris")
-end # @testset Deque
-
-import sys, os, shlex
-sys.path.append('/mypath/scriptlib')
-os.system("Users/henrykironde/.Ju")
-import juliadoc
-import sphinx_rtd_theme
-
 
 extensions = [
     'sphinx.ext.mathjax',
@@ -41,7 +12,6 @@ templates_path = ['_templates']
 
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
-source_suffix = ['.rst', '.md']
 source_suffix = ['.md']
 
 
