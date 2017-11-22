@@ -39,6 +39,8 @@ html: deps
 	@echo "Building HTML documentation."
 	# $(Python --version)
 	$(JULIA_EXECUTABLE) $(MAKEFILE)
+	$(shell ls )
+
 # ifneq ($(OS),WINNT)
 # 	$(JULIA_EXECUTABLE) $(call cygpath_w,$(SRCDIR)/make.jl)
 # else
