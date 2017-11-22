@@ -44,12 +44,12 @@ help:
 
 .PHONY: clean
 clean:
-	-rm -rf _build/*
+	-rm -rf build/*
 
 .PHONY: default
 html:
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
-	$(shell ($(JULIA_EXECUTABLE) make.jl))
+	# $(shell ($(JULIA_EXECUTABLE) make.jl)) > docbuild.log 2>&1
 	@echo
 	@echo "Building HTML documentation."
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
