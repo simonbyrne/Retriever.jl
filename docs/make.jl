@@ -7,6 +7,7 @@ makedocs(
     modules = [Retriever],
     clean = false,
     format = :html,
+    build = "build/html",
     sitename = "Retriever",
     authors = "Ethan White",
     pages = [
