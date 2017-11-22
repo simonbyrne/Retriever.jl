@@ -22,7 +22,7 @@ source_suffix = ['.md']
 #source_encoding = 'utf-8-sig'
 
 # The master toctree document.
-master_doc = 'src/lib/public.md'
+master_doc = 'src/lib/public'
 
 # General information about the project.
 project = u'Data Retriever'
