@@ -97,6 +97,7 @@ install_xml2 = Dict("engine" =>  "xml",
 # end
 
 
+
 function install(::String)
     try
 
@@ -148,7 +149,8 @@ end
 @testset "Regression" begin
 
     @test true
-    @test true == install("Iris")
+    Retriever.install_sqlite(install_sqlite2["dataset"])
+    # @test true == install("Iris")
     # @test true == install_cs("Iris")
     # @test true == install_xm("Iris")
     # @test true == install_jso("Iris")
